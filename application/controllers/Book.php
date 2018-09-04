@@ -1,4 +1,4 @@
-<?php
+wwwwwwwwwwwsssssssssssssssssssssssssssssssss<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Book extends MY_Controller {
@@ -34,7 +34,13 @@ class Book extends MY_Controller {
 	}
 
 	public function delete($id) {
-		$this->m_book->delete($id);
+		try {
+			$file = $this->m_book->get($id);
+			unlink('./public/uploads/'. $file->img);
+			$this->m_book->delete($id);
+		} catch (Exception $e) {
+			die($e);
+		}
 		redirect('book');
 	}
 
@@ -53,10 +59,17 @@ class Book extends MY_Controller {
 		} else{
 			$img = $_FILES['image']['name'];
 			if (!empty($img)) {
-				$upload = $this->m_book->upload();
-				if ($upload['result'] == 'error') {
-					$this->session->set_flashdata('error', $upload['error']);
-					redirect('book/create');
+				try {
+					$file = $this->m_book->get($id);
+					unlink('./public/uploads/'. $file->img);
+
+					$upload = $this->m_book->upload();
+					if ($upload['result'] == 'error') {
+						$this->session->set_flashdata('error', $upload['error']);
+						redirect('book/create');
+					}	
+				} catch (Exception $e) {
+					die($e);
 				}
 			}
 

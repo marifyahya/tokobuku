@@ -31,8 +31,8 @@
                 <tr>
                   <td><?php echo $row->publisher_name?></td>
                   <td>
-                    <a href="<?php echo base_url() ?>publisher/edit/<?php echo $row->publisher_id ?>" class="btn btn-warning btn-xs"><span class="fa fa-pencil-square-o"></span></a>
-                    <a href="<?php echo base_url() ?>publisher/delete/<?php echo $row->publisher_id ?>" class="btn btn-danger btn-xs" onClick="return confirm('Anda yakin ingin menghapus data ini?')"><span class="fa fa-trash"></span></a>
+                    <a href="<?php echo base_url() ?>publisher/edit/<?php echo $row->publisher_id ?>" class="btn btn-warning btn-xs"><span class="fa fa-pencil-square-o"></span> edit</a>
+                    <a href="<?php echo base_url() ?>publisher/delete/<?php echo $row->publisher_id ?>" class="btn btn-danger btn-xs" onClick="return confirm('Anda yakin ingin menghapus data ini?')"><span class="fa fa-trash"></span> hapus</a>
                   </td>
                 </tr>
               <?php }} ?>

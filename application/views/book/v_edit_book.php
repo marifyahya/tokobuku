@@ -83,6 +83,14 @@
                     <input type="file" class="form-control" id="inputImage" name="image">
                   </div>
                 </div>
+
+                <div class="form-group">
+                  <label for="inputImage" class="col-sm-2 control-label"></label>
+
+                  <div class="col-sm-10">
+                    <img src="<?php echo base_url() . 'public/uploads/' . $book->img ?>" alt="img priview" width="200px">
+                  </div>
+                </div>
               </div>
               <!-- /.box-body -->
               <div class="box-footer">

@@ -158,7 +158,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 0.6.1
     </div>
-    <strong>Copyright &copy; 2018 <a href="https://adminlte.io">STMIK IKMI CIREBON</a>.</strong> All rights
+    <strong>Copyright &copy; 2018 <a>Dev</a>.</strong> All rights
     reserved.
   </footer>
 
