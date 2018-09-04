@@ -10,7 +10,7 @@
                   <label for="inputISBN" class="col-sm-2 control-label">Nama penerbit</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputISBN" placeholder="Nama penerbit" name="publisher" value="<?php echo $penerbit->publisher_name ?>">
+                    <input type="text" class="form-control" id="inputISBN" placeholder="Nama penerbit" name="publisher" value="<?php echo $penerbit->publisher_name ?>" required>
                   </div>
                 </div>
               </div>

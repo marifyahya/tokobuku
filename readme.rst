@@ -10,6 +10,10 @@ Changelog and New Features
 
 Hanya CRUD
 
+Framework Codeigniter 3.1.9
+
+Template by Admin LTE
+
 *******************
 Server Requirements
 *******************

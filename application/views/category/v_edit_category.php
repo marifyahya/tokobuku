@@ -10,7 +10,7 @@
                   <label for="inputISBN" class="col-sm-2 control-label">Nama kategori</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputISBN" placeholder="Nama kategori" name="category" value="<?php echo $kategori->category_name ?>">
+                    <input type="text" class="form-control" id="inputISBN" placeholder="Nama kategori" name="category" value="<?php echo $kategori->category_name ?>" required>
                   </div>
                 </div>
               </div>
