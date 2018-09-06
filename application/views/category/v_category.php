@@ -1,9 +1,16 @@
 <section class="content">
     <?php if ($this->session->flashdata('success') != null): ?>
-        <div class="alert alert-warning alert-dismissable">
+        <div class="alert alert-success alert-dismissable">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <?php echo($this->session->flashdata('success')) ?>
         </div>
+    <?php endif ?>
+
+    <?php if ($this->session->flashdata('error') != null): ?>
+      <div class="alert alert-warning alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <?php echo($this->session->flashdata('error')) ?>
+      </div>
     <?php endif ?>
 
   <div class="row">
@@ -32,7 +39,9 @@
                   <td><?php echo $row->category_name?></td>
                   <td>
                     <a href="<?php echo base_url() ?>category/edit/<?php echo $row->category_id ?>" class="btn btn-warning btn-xs"><span class="fa fa-pencil-square-o"></span> edit</a>
-                    <a href="<?php echo base_url() ?>category/delete/<?php echo $row->category_id ?>" class="btn btn-danger btn-xs" onClick="return confirm('Anda yakin ingin menghapus data ini?')"><span class="fa fa-trash"></span> hapus</a>
+                    <!-- <a href="<?php echo base_url() ?>category/delete/<?php echo $row->category_id ?>" class="btn btn-danger btn-xs" onClick="return confirm('Anda yakin ingin menghapus data ini?')"><span class="fa fa-trash"></span> hapus</a> -->
+
+                    <button class="btn btn-danger btn-xs btn-delete" onclick="hapus(<?php echo $row->category_id ?>)"><span class="fa fa-trash"></span> hapus</button>
                   </td>
                 </tr>
               <?php }} ?>

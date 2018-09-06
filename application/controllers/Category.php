@@ -10,6 +10,10 @@ class Category extends MY_Controller {
 	public function index() {
 		$this->data['title'] = 'Kategori buku';
 		$this->data['kategori'] = $this->m_category->all();
+		$this->data['js'] = load_js([
+					'node_modules\sweetalert\dist\sweetalert.min',
+					'js/delete_kategori'
+				]);
 		$this->render('category/v_category');
 	}
 
@@ -21,9 +25,10 @@ class Category extends MY_Controller {
 	public function delete($id) {
 		$cek = $this->m_category->check($id);
 		if ($cek != NULL) {
-			$this->session->set_flashdata('success', 'Kategori tersebut sedang digunakan, tidak bisa dihapus');
+			$this->session->set_flashdata('error', 'Kategori tersebut sedang digunakan, tidak bisa dihapus');
 		} else {
 			$this->m_category->delete($id);
+			$this->session->set_flashdata('success', 'Kategori berhasil dihapus');
 		}
 
 		redirect('category');
