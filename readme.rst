@@ -2,7 +2,7 @@
 Aplikasi CRUD sederhana menggunakan Framework Codeigniter
 ###################
 
-Aplikasi ini dibuat berdasarkan tugas LSM
+Aplikasi ini dibuat berdasarkan tugas LSP
 
 **************************
 Changelog and New Features
